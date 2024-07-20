@@ -1,13 +1,13 @@
 <div
   id="img-carrossel"
-  [style.backgroundImage]="'url(' + imageLiks[indexActiveImage] + ')'"
+  [style.backgroundImage]="'url(' + imageLinks[imageActiveIndex] + ')'"
 >
   <div id="carrossel-arrows">
-    <button class="arrow-btn" data-test="arrow-btn-back" [disabled]="!canGoPreviously()" (click)="changeImage(-1)">
+    <button class="arrow-btn" (click)="changeImageIndex(-1)">
         <mat-icon >keyboard_arrow_left</mat-icon>
     </button>
 
-    <button class="arrow-btn" [disabled]="!canGoNext()" (click)="changeImage(+1)">
+    <button class="arrow-btn" (click)="changeImageIndex(1)">
         <mat-icon>keyboard_arrow_right</mat-icon>
     </button>
   </div>

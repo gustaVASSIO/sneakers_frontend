@@ -1,0 +1,19 @@
+<div id="form-login-container">
+  <form id="form-login">
+    <label for="username">Username</label>
+    <input
+      #username
+      (change)="setUsername(username)"
+      name="username"
+      type="text"
+    />
+
+    <label for="password">Senha</label>
+    <input
+      #password
+      (change)="setPassword(password)"
+      name="password"
+      type="text"
+    />
+  </form>
+</div>

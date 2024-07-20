@@ -6,29 +6,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carrossel.component.scss'],
 })
 export class CarrosselComponent implements OnInit {
-  indexActiveImage: number = 0
-  
-  imageLiks: string[] = [
+  imageActiveIndex: number = 0;
+
+  imageLinks: string[] = [
     '/assets/img-cr-1.jpeg',
     '/assets/img-cr-2.jpeg',
-    '/assets/img-cr-3.jpeg'
+    '/assets/img-cr-3.jpeg',
   ];
+
   constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
 
+  changeImageIndex(num: number): void {
+    this.imageActiveIndex += num;
+    this.needResetCarrossel();
   }
 
-  public changeImage(numberImageToChange: number){
-    this.indexActiveImage += numberImageToChange;
-  }
+  // canGoPreviously(): boolean{
+  //   return this.imageActiveIndex !== 0
+  // }
 
-  public canGoPreviously(){
-    if(this.indexActiveImage == 0) return false
-    return true
-  }
-  public canGoNext(){
-    if(this.imageLiks.length-1 == this.indexActiveImage) return false
-    return true
+  // canGoNext(): boolean{
+  //   return this.imageActiveIndex !== this.imageLinks.length - 1
+  // }
+
+  private needResetCarrossel(){
+    if(this.imageActiveIndex === -1){
+      this.imageActiveIndex = this.imageLinks.length - 1 
+    }
+    else if(this.imageActiveIndex > this.imageLinks.length -1){
+      this.imageActiveIndex = 0
+    }
   }
 }
