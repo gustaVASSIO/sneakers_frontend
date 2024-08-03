@@ -1,0 +1,20 @@
+<div id="form-login-container">
+  <form id="form-login" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username"/>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Senha</mat-label>
+      <input matInput formControlName="password" />
+    </mat-form-field>
+
+    <button mat-raised-button color="primary">Entrar / Cadastrar</button>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BrandComponent } from './brand/brand.component';
-import { FormLoginComponent } from './form-login/form-login.component';
+import { BrandComponent } from './pages/brand/brand.component';
+import { FormLoginComponent } from './pages/form-login/form-login.component';
 
 const routes: Routes = [
   { path:"brands", component: BrandComponent },
