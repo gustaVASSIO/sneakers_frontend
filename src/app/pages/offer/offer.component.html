@@ -1,0 +1,9 @@
+<h1>Essas são nossas ofertas!</h1>
+<br />
+<div id="sneakers-offers-container">
+  <app-sneaker-card
+    (sendProductToAdd)="addProductInCarshop($event)"
+    *ngFor="let sneaker of sneakers"
+    [sneaker]="sneaker"
+  ></app-sneaker-card>
+</div>

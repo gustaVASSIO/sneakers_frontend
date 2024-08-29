@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-carrossel',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrosselComponent implements OnInit {
   imageActiveIndex: number = 0;
+  @Input() isActive: boolean = true;
 
   imageLinks: string[] = [
     '/assets/img-cr-1.jpeg',
@@ -22,14 +23,6 @@ export class CarrosselComponent implements OnInit {
     this.imageActiveIndex += num;
     this.needResetCarrossel();
   }
-
-  // canGoPreviously(): boolean{
-  //   return this.imageActiveIndex !== 0
-  // }
-
-  // canGoNext(): boolean{
-  //   return this.imageActiveIndex !== this.imageLinks.length - 1
-  // }
 
   private needResetCarrossel(){
     if(this.imageActiveIndex === -1){

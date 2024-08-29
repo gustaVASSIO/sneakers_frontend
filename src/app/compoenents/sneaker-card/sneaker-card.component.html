@@ -1,0 +1,16 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{sneaker.name}} - {{sneaker.value | currency:'R$'}}</mat-card-title>
+    <mat-card-subtitle>Data de lançamento - {{sneaker.releaseDate | date:'dd/MM/yyyy'}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="sneaker.imageUrl" alt="Sneaker Image">
+  <mat-card-content>
+    <p>
+      {{sneaker.description}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button  mat-button (click)="sendProduct()">Comprar</button>
+  </mat-card-actions>
+</mat-card>
+

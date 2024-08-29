@@ -1,6 +1,7 @@
 <div
   id="img-carrossel"
   [style.backgroundImage]="'url(' + imageLinks[imageActiveIndex] + ')'"
+  *ngIf="isActive"
 >
   <div id="carrossel-arrows">
     <button class="arrow-btn" (click)="changeImageIndex(-1)">
