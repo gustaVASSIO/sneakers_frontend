@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import CarshopModel from '../models/carshop.model';
 import Sneaker from '../models/sneaker.model';
+import { sneakers } from '../data/sneakers.data';
 
 @Injectable({
   providedIn: 'root',
@@ -18,14 +19,22 @@ export class CarshopService {
     );
 
     // if exists increase quantity
+    debugger;
     if (productInCarshop) {
-      this.carshop.sneakers.map((sneaker) => ({
-        ...sneaker,
-        quantity: (sneaker.quantity += 1),
-      }));
+      this.carshop.sneakers.forEach((sneaker) => {
+        if (sneaker.id === productInCarshop.id) sneaker.quantity++;
+      });
     } else {
       this.carshop.sneakers.push(sneakerToAdd);
     }
     console.log('Carrinho:', this.carshop);
+  }
+
+  get quantity() {
+    let totalQuantity: number = 0;
+    this.carshop.sneakers.forEach(
+      (sneaker) => (totalQuantity += sneaker.quantity)
+    );
+    return totalQuantity;
   }
 }

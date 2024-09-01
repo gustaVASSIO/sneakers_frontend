@@ -34,7 +34,35 @@
   height: 100%;
 }
 
+#carshop-icon-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30px;
+  height: 40px;
+
+}
+
+#quantity-products-in-carshop{
+  padding-top: 0.1rem;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #3f51b5;
+  font-size: 0.7rem;
+  color: #fff;
+  z-index: 100;
+}
+
 .nav-link{
   text-decoration: none;
   color: #fff;
 }
+
